@@ -1,1 +1,1 @@
-export { EnumsManager } from "./enum-store";
+export { EnumsManager } from "./enum-manager";
