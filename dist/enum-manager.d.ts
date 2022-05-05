@@ -8,7 +8,7 @@ export declare class EnumsManager {
     private subscriptions;
     private fetchEnumCallback;
     private state;
-    constructor(enumsParmas: enumsType);
+    constructor(enumsParmas?: enumsType);
     /**
      * 标记在枚举中某一项,标记需要在枚举中能找到才能标记
      * @param symbols 需要设置的标记

@@ -5,7 +5,14 @@
 - 枚举只有一份
 - 设置初始枚举和远程枚举,初始枚举用来作为在远程枚举还没拿到前的特殊判断, 远程枚举必须包含初始枚举,否则报错,确保枚举更新后枚举一致
 
-- 示例
+## 使用
+- setSymbols 设置标记
+- setGetters 设置getters筛选条件, 
+- setFetchEnumsCallback 设置远程加载方法, 接受一个回调,回调返回一个Promise,resolve请求到的枚举
+- setSubscribe 添加远程加载回调更新完毕监听, 接收一个回调函数,参数为更新完毕的枚举
+- promiseGetFetchEnums promise获取远程加载的枚举,resolve更新完毕的枚举
+
+- 使用示例
 
 ```javascript
 // enums.js
@@ -18,13 +25,13 @@ export const testEnums = new EnumsManager([
   { id: 3, value: "3" },
   { id: 4, value: "4" },
 ])
-  .setSymbols({
+  .setSymbols({ // 设置标记
     ONE: 1,
     TWO: 2,
     THREE: 3,
     FOUR: 4,
   })
-  .setGetters({
+  .setGetters({ // 设置getters筛选条件
     ID_GREATER_THAN_TWO({ id }) {
       return id > 2;
     },
@@ -32,7 +39,7 @@ export const testEnums = new EnumsManager([
       return id > 4;
     },
   })
-  .setFetchEnumsCallback(() =>
+  .setFetchEnumsCallback(() => // 设置远程加载回调
     Promise.resolve([
       { id: 1, value: "1" },
       { id: 2, value: "2" },
@@ -48,9 +55,9 @@ import { testEnums } from "./enums.js";
 
 // 拿到未更新的
 console.log(
-  testEnums.symbols.ONE,
-  testEnums.enums,
-  testEnums.getters.ID_GREATER_THAN_TWO,
+  testEnums.symbols.ONE, // 获取某个标记
+  testEnums.enums,  // 获取所有枚举
+  testEnums.getters.ID_GREATER_THAN_TWO, // 获取某个getters
   "1"
 );
 

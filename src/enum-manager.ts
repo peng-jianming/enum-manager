@@ -36,7 +36,7 @@ export class EnumsManager {
   // 远程加载的状态
   private state: STATE;
 
-  constructor(enumsParmas: enumsType) {
+  constructor(enumsParmas: enumsType = []) {
     this.initEnums = enumsParmas;
 
     this.symbols = {};

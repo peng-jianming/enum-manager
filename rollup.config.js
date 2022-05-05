@@ -1,7 +1,7 @@
 import packageJSON from "./package.json";
 import resolve from "rollup-plugin-node-resolve"; // 依赖引用插件
 import commonjs from "rollup-plugin-commonjs"; // commonjs模块转换插件
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import { babel } from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
 
