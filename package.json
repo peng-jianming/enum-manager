@@ -1,5 +1,5 @@
 {
-  "name": "enum-store",
+  "name": "@pjm-tools/enum-manager",
   "version": "1.0.0",
   "description": "枚举管理器",
   "main": "dist/index.js",
@@ -27,5 +27,8 @@
   "files": [
     "dist",
     "src"
-  ]
+  ],
+  "dependencies": {
+    "enum-manager": "^1.0.0"
+  }
 }
