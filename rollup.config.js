@@ -15,7 +15,11 @@ const commonConf = {
     typescript({
       tsconfig: "./tsconfig.json",
     }),
-    babel({ babelHelpers: "bundled", extensions }),
+    babel({
+      babelHelpers: "runtime",
+      extensions,
+      exclude: "node_modules/**",
+    }),
     terser(),
   ],
 };

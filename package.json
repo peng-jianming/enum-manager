@@ -1,6 +1,6 @@
 {
   "name": "@pjm-tools/enum-manager",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "枚举管理器",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -33,5 +33,9 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.9",
+    "@babel/runtime-corejs3": "^7.17.9"
   }
 }
